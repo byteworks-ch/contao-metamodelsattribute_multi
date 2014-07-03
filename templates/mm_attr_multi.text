@@ -1,0 +1,3 @@
+<?php foreach ($this->raw as $record): ?>
+    <?php echo http_build_query($record, null, ' '); ?>
+<?php endforeach; ?>

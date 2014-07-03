@@ -1,0 +1,5 @@
+<span class="text">
+	<?php foreach ($this->raw as $record): ?>
+		&nbsp;&nbsp;&nbsp;<?php echo http_build_query($record, null, ' '); ?>
+	<?php endforeach; ?>
+</span>
