@@ -1,0 +1,18 @@
+# os
+.DS_Store
+Thumbs.db
+
+# ide's
+.buildpath
+.project
+.settings/
+.build/
+.external*/
+.idea/
+nbproject/
+
+# composer related
+vendor/
+
+# build
+build/

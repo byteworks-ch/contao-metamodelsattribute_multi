@@ -1,0 +1,34 @@
+{
+	"name":"byteworks/metamodelsattribute_multi",
+	"description":"...",
+	"keywords":["management"],
+	"type":"contao-module",
+	"homepage":"http://www.byteworks.ch",
+	"license":"GPL-3.0+",
+	"authors":[
+		{
+			"name":"Michael Bischof",
+			"email":"mb@byteworks.ch",
+			"homepage":"http://www.byteworks.ch",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"email":"info@byteworks.ch",
+		"issues":"https://github.com/byteworks-ch/contao-metamodelsattribute_multi/issues",
+		"source":"https://github.com/byteworks-ch/contao-metamodelsattribute_multi"
+	},
+	"require":{
+		"php":">=5.3",
+		"contao/core":">=3.2,<3.4",
+		"contao-community-alliance/composer-installer":"*"
+	},
+	"extra":{
+		"contao":{
+			"sources":{
+				"system/modules/metamodelsattribute_multi":"system/modules/metamodelsattribute_multi"
+			}
+		}
+	}
+}
+
