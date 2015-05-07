@@ -1,14 +1,12 @@
 <?php
 
 /**
- * Copyright (c) 2014 by Byteworks GmbH
+ * Copyright (c) 2014-2015 by Byteworks GmbH
  * All rights reserved
  *
  * http://www.byteworks.ch/
  *
  * Michael Bischof <mb@byteworks.ch>
- *
- * $Id$
  *
  */
 
@@ -27,4 +25,3 @@ ClassLoader::addClasses(array(
 TemplateLoader::addFiles(array(
 	'mm_attr_multi' => 'system/modules/metamodelsattribute_multi/templates',
 ));
-
