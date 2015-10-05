@@ -26,7 +26,10 @@
     "contao": {
       "sources": {
         "src/system/modules/metamodelsattribute_multi": "system/modules/metamodelsattribute_multi"
-      }
+      },
+      "runonce": [
+        "runonce/runonce.php"
+      ]
     }
   }
 }

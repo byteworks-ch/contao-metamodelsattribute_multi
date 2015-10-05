@@ -1,4 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
+<?php
 
 /**
  * Copyright (c) 2014-2015 by Byteworks GmbH
@@ -21,6 +21,6 @@ $GLOBALS['MM_AUTOLOAD'][] = dirname(__DIR__) . DIRECTORY_SEPARATOR . 'deprecated
 /**
  * Local settings
  */
-if (file_exists(dirname(__FILE__) . '/localconfig.php')) {
-	include_once(dirname(__FILE__) . '/localconfig.php');
+if (file_exists(TL_ROOT . '/system/config/module-multicolumnwizard.php')) {
+    include_once(TL_ROOT . '/system/config/module-multicolumnwizard.php');
 }

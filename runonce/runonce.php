@@ -1,3 +1,17 @@
+<?php
+
+/**
+ * Copyright (c) 2014-2015 by Byteworks GmbH
+ * All rights reserved
+ *
+ * http://www.byteworks.ch/
+ *
+ * Michael Bischof <mb@byteworks.ch>
+ *
+ */
+
+$file = TL_ROOT . '/system/config/module-multicolumnwizard.php';
+$data = <<<'__EOT__'
 <?php if (!defined('TL_ROOT')) die('You can not access this file directly!');
 
 /**
@@ -42,3 +56,9 @@ $GLOBALS['TL_CONFIG']['metamodelsattribute_multi']['mm_test']['multi_1'] = array
 	),
 
 );
+
+__EOT__;
+
+if (!file_exists($file)) {
+    file_put_contents($file, $data);
+}
