@@ -32,7 +32,7 @@ class Multi extends BaseSimple
      */
     public function getSQLDataType()
     {
-        return 'text NULL';
+        return 'blob NULL';
     }
 
 
