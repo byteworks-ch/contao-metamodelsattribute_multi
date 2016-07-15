@@ -44,15 +44,18 @@ $data = <<<'__EOT__'
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// For a detailed list of available options please check:
-// http://de.contaowiki.org/MultiColumnWizard
 
+/*
+ * Use multicolumnwizard in metamodel:
+ * $GLOBALS['TL_CONFIG']['dma_elementgenerator']['<METAMODEL_TABLE_NAME>']['<FIELDNAME>']
+ *
+ */
 $GLOBALS['TL_CONFIG']['metamodelsattribute_multi']['mm_test']['multi_1'] = array(
 	'minCount'     => 2,
 	'maxCount'     => 4,
 	'columnFields' => array(
-		'ts_client_os'     => array(
-			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['t1_client_os'],
+		'hotspot_type'     => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_type'],
 			'exclude'   => true,
 			'inputType' => 'select',
 			'options'   => array(
@@ -61,21 +64,62 @@ $GLOBALS['TL_CONFIG']['metamodelsattribute_multi']['mm_test']['multi_1'] = array
 			),
 			'eval'      => array('style' => 'width:250px', 'includeBlankOption' => true, 'chosen' => true)
 		),
-		'ts_client_mobile' => array(
-			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['t1_client_mobile'],
+		'hotspot_active' => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_active'],
 			'exclude'   => true,
 			'inputType' => 'checkbox',
 			'eval'      => array('style' => 'width:40px')
 
 		),
-		'ts_extension'     => array(
-			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['t1_extension'],
+		'hotspot_description'     => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_description'],
 			'inputType' => 'text',
 			'eval'      => array('mandatory' => true, 'style' => 'width:115px')
 		),
 	),
 
 );
+
+
+/*
+ * Use Multicolumnwizard in elementgenerator:
+ * $GLOBALS['TL_CONFIG']['dma_elementgenerator']['dma_eg_<ID_OF_ELEMENT>']['<FIELDNAME>']
+ *
+ */
+$GLOBALS['TL_CONFIG']['dma_elementgenerator']['dma_eg_28']['hotspots'] = array(
+	'minCount'     => 2,
+	'maxCount'     => 4,
+	'columnFields' => array(
+		'hotspot_type'     => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_type'],
+			'exclude'   => true,
+			'inputType' => 'select',
+			'options'   => array(
+				'option1' => 'Option 1',
+				'option2' => 'Option 2',
+			),
+			'eval'      => array('style' => 'width:250px', 'includeBlankOption' => true, 'chosen' => true)
+		),
+		'hotspot_active' => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_active'],
+			'exclude'   => true,
+			'inputType' => 'checkbox',
+			'eval'      => array('style' => 'width:40px')
+
+		),
+		'hotspot_description'     => array(
+			'label'     => &$GLOBALS['TL_LANG']['metamodelsattribute_multi']['mm_test']['hotspot_description'],
+			'inputType' => 'text',
+			'eval'      => array('mandatory' => true, 'style' => 'width:115px')
+		),
+	),
+
+);
+
+/*
+ * For a detailed list of available options please check:
+ * http://de.contaowiki.org/MultiColumnWizard
+ */
 
 __EOT__;
 
