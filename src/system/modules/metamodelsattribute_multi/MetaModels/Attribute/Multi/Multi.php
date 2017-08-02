@@ -73,5 +73,30 @@ class Multi extends BaseSimple
         return $arrFieldDef;
     }
 
+    
+    /**
+     * Take the raw data from the DB column and unserialize it.
+     *
+     * @param string $value The input value.
+     *
+     * @return mixed
+     */
+    public function unserializeData($value)
+    {
+       return unserialize($value);
+    }
+
+    /**
+     * Take the unserialized data and serialize it for the native DB column.
+     *
+     * @param mixed $value The input value.
+     *
+     * @return string
+     */
+    public function serializeData($value)
+    {
+         return serialize($value);
+    }
+
 }
 
