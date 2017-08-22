@@ -20,19 +20,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array(
-    'MetaModels\Attribute\Multi\AttributeTypeFactory' => 'system/modules/metamodelsattribute_multi/MetaModels/Attribute/Multi/AttributeTypeFactory.php',
-    'MetaModels\Attribute\Multi\Multi'                => 'system/modules/metamodelsattribute_multi/MetaModels/Attribute/Multi/Multi.php',
-    'MetaModelAttributeMulti'                         => 'system/modules/metamodelsattribute_multi/deprecated/MetaModelAttributeMulti.php',
-));
+namespace MetaModels\Attribute\Multi;
 
+use MetaModels\Attribute\AbstractAttributeTypeFactory;
 
 /**
- * Register the templates
+ * This is the attribute type factory for the multi attribute.
  */
-TemplateLoader::addFiles(array(
-	'mm_attr_multi' => 'system/modules/metamodelsattribute_multi/templates',
-));
+class AttributeTypeFactory extends AbstractAttributeTypeFactory
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->typeName  = 'multi';
+        $this->typeIcon  = 'system/modules/metamodelsattribute_multi/html/multi.png';
+        $this->typeClass = 'MetaModels\Attribute\Multi\Multi';
+    }
+}

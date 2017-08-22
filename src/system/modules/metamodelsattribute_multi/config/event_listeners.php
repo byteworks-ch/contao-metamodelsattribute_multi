@@ -20,19 +20,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array(
-    'MetaModels\Attribute\Multi\AttributeTypeFactory' => 'system/modules/metamodelsattribute_multi/MetaModels/Attribute/Multi/AttributeTypeFactory.php',
-    'MetaModels\Attribute\Multi\Multi'                => 'system/modules/metamodelsattribute_multi/MetaModels/Attribute/Multi/Multi.php',
-    'MetaModelAttributeMulti'                         => 'system/modules/metamodelsattribute_multi/deprecated/MetaModelAttributeMulti.php',
-));
+use MetaModels\Attribute\Events\CreateAttributeFactoryEvent;
+use MetaModels\Attribute\Multi\AttributeTypeFactory;
+use MetaModels\MetaModelsEvents;
 
-
-/**
- * Register the templates
- */
-TemplateLoader::addFiles(array(
-	'mm_attr_multi' => 'system/modules/metamodelsattribute_multi/templates',
-));
+return array(
+    MetaModelsEvents::ATTRIBUTE_FACTORY_CREATE => array(
+        function (CreateAttributeFactoryEvent $event) {
+            $factory = $event->getFactory();
+            $factory->addTypeFactory(new AttributeTypeFactory());
+        }
+    )
+);
